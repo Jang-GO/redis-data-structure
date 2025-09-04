@@ -1,6 +1,7 @@
 package com.example.redisdatastructure.cache.service;
 
-import com.example.redisdatastructure.cache.dto.response.ProductResponse;
+import com.example.redisdatastructure.string.cache.dto.response.ProductResponse;
+import com.example.redisdatastructure.string.cache.service.ProductService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

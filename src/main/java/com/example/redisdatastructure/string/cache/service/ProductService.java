@@ -1,8 +1,8 @@
-package com.example.redisdatastructure.cache.service;
+package com.example.redisdatastructure.string.cache.service;
 
-import com.example.redisdatastructure.cache.domain.Product;
-import com.example.redisdatastructure.cache.dto.response.ProductResponse;
-import com.example.redisdatastructure.cache.repository.ProductRepository;
+import com.example.redisdatastructure.string.cache.domain.Product;
+import com.example.redisdatastructure.string.cache.dto.response.ProductResponse;
+import com.example.redisdatastructure.string.cache.repository.ProductRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;

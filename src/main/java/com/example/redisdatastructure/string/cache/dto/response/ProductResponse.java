@@ -1,6 +1,6 @@
-package com.example.redisdatastructure.cache.dto.response;
+package com.example.redisdatastructure.string.cache.dto.response;
 
-import com.example.redisdatastructure.cache.domain.Product;
+import com.example.redisdatastructure.string.cache.domain.Product;
 
 public record ProductResponse(Long id, String name, int price) {
 

@@ -1,4 +1,4 @@
-package com.example.redisdatastructure.cache.domain;
+package com.example.redisdatastructure.string.cache.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
