@@ -1,4 +1,4 @@
-package com.example.redisdatastructure.cache.service;
+package com.example.redisdatastructure.string.cache.service;
 
 import com.example.redisdatastructure.string.cache.dto.response.ProductResponse;
 import com.example.redisdatastructure.string.cache.service.ProductService;
