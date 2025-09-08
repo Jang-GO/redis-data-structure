@@ -1,7 +1,7 @@
 package com.example.redisdatastructure.list;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class RedisListService {
 
-    private final StringRedisTemplate redisTemplate;
+    private final RedisTemplate<String, Object> redisTemplate;
 
     public void lpush(String key, String value) {
         redisTemplate.opsForList().leftPush(key, value);
@@ -20,15 +20,15 @@ public class RedisListService {
         redisTemplate.opsForList().rightPush(key, value);
     }
 
-    public String lpop(String key) {
+    public Object lpop(String key) {
         return redisTemplate.opsForList().leftPop(key);
     }
 
-    public String rpop(String key) {
+    public Object rpop(String key) {
         return redisTemplate.opsForList().rightPop(key);
     }
 
-    public List<String> lrange(String key, long start, long end) {
+    public List<Object> lrange(String key, long start, long end) {
         return redisTemplate.opsForList().range(key, start, end);
     }
 
