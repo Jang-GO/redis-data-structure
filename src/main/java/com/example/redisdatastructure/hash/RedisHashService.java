@@ -53,35 +53,4 @@ public class RedisHashService {
     public Long hincrby(String key, String field, long value) {
         return redisTemplate.opsForHash().increment(key, field, value);
     }
-
-    // 필드에 TTL 설정 (초 단위)
-    public Boolean hexpire(String key, String field, long seconds) {
-        return redisTemplate.execute((RedisCallback<Boolean>) connection -> {
-            Object result = connection.execute("HEXPIRE",
-                    key.getBytes(),
-                    String.valueOf(seconds).getBytes(),
-                    field.getBytes());
-            return result != null && (Long) result == 1L;
-        });
-    }
-
-    // 필드의 남은 TTL 조회 (초 단위)
-    public Long httl(String key, String field) {
-        return redisTemplate.execute((RedisCallback<Long>) connection -> {
-            Object result = connection.execute("HTTL",
-                    key.getBytes(),
-                    field.getBytes());
-            return result != null ? (Long) result : -1L;
-        });
-    }
-
-    // 필드의 만료 시간 제거
-    public Boolean hpersist(String key, String field) {
-        return redisTemplate.execute((RedisCallback<Boolean>) connection -> {
-            Object result = connection.execute("HPERSIST",
-                    key.getBytes(),
-                    field.getBytes());
-            return result != null && (Long) result == 1L;
-        });
-    }
 }

@@ -40,18 +40,4 @@ public class RedisHashController {
         Long result = redisHashService.hincrby(key, field, amount);
         return ResponseEntity.ok(result);
     }
-
-    // HEXPIRE: 필드에 만료 시간(초) 설정
-    @PostMapping("/{key}/{field}/expire")
-    public ResponseEntity<Boolean> hexpire(@PathVariable String key, @PathVariable String field, @RequestParam long seconds) {
-        Boolean result = redisHashService.hexpire(key, field, seconds);
-        return ResponseEntity.ok(result);
-    }
-
-    // HTTL: 필드의 남은 만료 시간(초) 조회
-    @GetMapping("/{key}/{field}/ttl")
-    public ResponseEntity<Long> httl(@PathVariable String key, @PathVariable String field) {
-        Long ttl = redisHashService.httl(key, field);
-        return ResponseEntity.ok(ttl);
-    }
 }
